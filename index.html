@@ -4979,20 +4979,15 @@ window['__onGCastApiAvailable'] = (isAvailable) => {
     }
 };
 
-document.getElementById('castButton').addEventListener('click', () => {
-    const context = cast.framework.CastContext.getInstance();
-    context.requestSession().then(() => {
-        castSession = context.getCurrentSession();
-        const videoElement = document.querySelector('video');
-        loadMedia(videoElement.src);
-    }).catch((error) => {
-        console.log('Error starting cast session:', error);
-    });
-});
 
 function loadMedia(videoUrl) {
     if (!castSession) {
         console.log('No cast session available');
+        return;
+    }
+
+    if (!videoUrl) {
+        console.log('Không có URL video để phát.');
         return;
     }
 
@@ -5040,10 +5035,14 @@ function showVideoIntro() {
 
 // Hiển thị Video Gallery và thu nhỏ phần giới thiệu
 function showVideoGallery() {
-    document.getElementById('videoGallery').style.display = 'block';
-    document.getElementById('videoIntro').classList.add('compact');
-    document.getElementById('menuContent').style.display = 'none';
+    const videoGallery = document.getElementById('videoGallery');
+    if (videoGallery) {
+        videoGallery.style.display = 'block';
+    } else {
+        console.error('Phần tử videoGallery không tồn tại.');
+    }
 }
+
 
 // Đóng Video Gallery và khôi phục phần giới thiệu
 function closeVideoGallery() {
