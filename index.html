@@ -4669,6 +4669,7 @@ modal.addEventListener('click', (event) => {
 
 
 
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -4679,11 +4680,10 @@ modal.addEventListener('click', (event) => {
 </head>
 <body>
  
-
 <!-- Thư mục Video 18+ -->
 <div id="videoGallery" class="content-section" style="display: none;">
   <h2>🔥 Video 18+ 🔥</h2>
-  <button class="close-button" onclick="closeVideoGallery()">Đóng</button>
+
  <!-- Phần giới thiệu mới cho Video 18+ -->
  <div class="intro-section">
   <h2>🎬 CHÀO MỪNG ĐẾN VỚI THẾ GIỚI VIDEO 18+ 🎬</h2>
@@ -4692,146 +4692,321 @@ modal.addEventListener('click', (event) => {
       Chúng tôi mang đến cho bạn bộ sưu tập video đặc sắc, nơi mỗi khoảnh khắc đều là 
       một câu chuyện gợi cảm đang chờ bạn khám phá.
   </p>
-
+  <button class="close-button" onclick="closeVideoGallery()">Đóng</button>
 </div>
-  <div class="video-container">
-      <video controls>
-          <source src="videos/video1.mp4" type="video/mp4">
-          Trình duyệt của bạn không hỗ trợ phát video.
-      </video>
-  </div>
 
-  <div class="video-container">
-      <video controls>
-          <source src="videos/video2.mp4" type="video/mp4">
-          Trình duyệt của bạn không hỗ trợ phát video.
-      </video>
+
+<div class="video-gallery-container">
+  <img src="https://i.ibb.co/KqPBnn3/photo-533-23-06-2024-18-40-36-removebg-preview.png" alt="Logo Video 18+" class="video-logo">
+  <button id="castButton">📺 Phát Trên Màn Hình</button>
+  <div class="video-gallery-grid">
+      <!-- Tạo 16 video -->
+      <div class="video-container">
+          <video controls>
+              <source src="video/video1.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video2.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video3.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video4.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video5.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video6.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video7.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video8.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video9.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video10.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video11.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video12.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video13.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video14.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video15.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div class="video-container">
+          <video controls>
+              <source src="video/video16.mp4" type="video/mp4">
+          </video>
+      </div>
   </div>
 </div>
+<script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
 
 
     <style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
-    margin: 0;
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .video-logo {
+    display: block;
+    max-width: 200px;    /* Điều chỉnh kích thước logo */
+    margin: 20px auto;   /* Căn giữa logo */
+    height: auto;        /* Giữ tỷ lệ khung hình */
+}
+
+        /* Phần giới thiệu */
+        .intro-section {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 90%;
+            margin: 20px auto;
+            box-shadow: 0px 5px 20px rgba(255, 105, 180, 0.3);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .intro-section h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff69b4;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ff6a00, #ffcc00, #ff6a00);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .intro-section p {
+            font-size: 1em;
+            line-height: 1.4;
+            color: #ddd;
+            margin-bottom: 0;
+        }
+
+        /* Hiệu ứng fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Thư viện video */
+        .video-gallery-container {
+            padding: 15px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            max-width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .video-gallery-container h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .video-gallery-container p {
+            text-align: center;
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+    /* Grid video */
+.video-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
     padding: 20px;
 }
 
-/* Phần giới thiệu */
-.intro-section {
-    background-color: #222;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 100%;          /* Chiều rộng tối đa 100% */
-    width: 100%;              /* Chiếm toàn bộ chiều ngang */
-    margin: 10px auto;        /* Căn giữa và tạo khoảng cách trên/dưới */
-    box-shadow: 0px 4px 15px rgba(255, 105, 180, 0.3);
-    transition: all 0.3s ease;
-}
+        .video-container {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Tiêu đề */
-.intro-section h2 {
-    font-size: 1.5em;         /* Kích thước tiêu đề phù hợp cho điện thoại */
-    color: #ff69b4;
-    margin-bottom: 10px;
-}
+        .video-container video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-/* Đoạn văn bản */
-.intro-section p {
-    font-size: 1em;           /* Kích thước chữ vừa phải */
-    line-height: 1.4;         /* Tăng khoảng cách dòng để dễ đọc */
-}
+        /* Hiệu ứng hover cho video */
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.5);
+        }
 
-/* Responsiv
+        /* Điều chỉnh cho thiết bị di động */
+        @media (max-width: 767px) {
+            .intro-section {
+                padding: 15px;
+                max-width: 95%;
+            }
 
+            .intro-section h2 {
+                font-size: 1.2em;
+            }
 
-/* Điều chỉnh cho màn hình lớn hơn */
-@media screen and (min-width: 768px) {
-    .intro-section {
-        width: 60%;         /* Giảm chiều rộng cho màn hình lớn hơn */
-    }
-}
+            .intro-section p {
+                font-size: 0.9em;
+            }
 
-.intro-section.compact {
-    padding: 5px;
-    font-size: 0.8em;
-    max-width: 200px;
-}
+            .video-gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 8px;
+            }
 
-.intro-title {
-    font-size: 1.8em;
-    color: #ff69b4;
-}
+            .video-container video {
+                height: 150px;
+            }
+        }
 
-.intro-text {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-.explore-button {
-    background-color: #ff69b4;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.explore-button:hover {
-    background-color: #ff1493;
-}
-
-/* Thư mục video */
-.content-section {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-}
-
-.video-container {
-    margin-bottom: 15px;
-}
-
-.video-container video {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Nút đóng */
-.close-button {
-    background-color: red;
+        
+        #castButton {
+    background: linear-gradient(135deg, #6a0dad, #b74cd9); /* Gradient tím giống trong hình */
     color: white;
+    padding: 10px 20px;
+    font-size: 1.0em;
+    font-weight: bold;
     border: none;
-    padding: 10px 15px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(183, 76, 217, 0.5);
+    transition: all 0.3s ease;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Khoảng cách giữa icon và text */
+     margin-left: 20px; /* Đẩy vào từ mép trái */
+    margin-top: 20px;  /* Đẩy xuống từ mép trên */
 }
 
-.close-button:hover {
-    background-color: darkred;
+/* Hiệu ứng hover */
+#castButton:hover {
+    background: linear-gradient(135deg, #b74cd9, #6a0dad); /* Đảo ngược gradient */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(183, 76, 217, 0.7);
 }
 
-.intro-section {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+/* Hiệu ứng khi nhấn */
+#castButton:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(183, 76, 217, 0.4);
 }
 
-.intro-section.hidden {
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none; /* Ngăn tương tác khi ẩn */
-}
 
 </style>
 <script>
+
+let castSession = null;
+
+function initializeCastApi() {
+    cast.framework.CastContext.getInstance().setOptions({
+        receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+        autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+    });
+}
+
+window['__onGCastApiAvailable'] = (isAvailable) => {
+    if (isAvailable) {
+        initializeCastApi();
+    }
+};
+
+document.getElementById('castButton').addEventListener('click', () => {
+    const context = cast.framework.CastContext.getInstance();
+    context.requestSession().then(() => {
+        castSession = context.getCurrentSession();
+        const videoElement = document.querySelector('video');
+        loadMedia(videoElement.src);
+    }).catch((error) => {
+        console.log('Error starting cast session:', error);
+    });
+});
+
+function loadMedia(videoUrl) {
+    if (!castSession) {
+        console.log('No cast session available');
+        return;
+    }
+
+    const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, 'video/mp4');
+    const request = new chrome.cast.media.LoadRequest(mediaInfo);
+
+    castSession.loadMedia(request).then(() => {
+        console.log('Media loaded successfully');
+    }).catch((error) => {
+        console.log('Error loading media:', error);
+    });
+}
+
+
 function toggleMenu() {
     const menuContent = document.getElementById('menuContent');
     if (menuContent.style.display === 'none' || menuContent.style.display === '') {
